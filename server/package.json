@@ -1,5 +1,5 @@
 {
-  "name": "server",
+  "name": "mtm-server",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -23,5 +23,8 @@
   "devDependencies": {
     "concurrently": "^7.0.0",
     "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
