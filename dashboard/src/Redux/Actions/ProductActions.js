@@ -32,7 +32,10 @@ export const listProducts = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/products/all`, config);
+    const { data } = await axios.get(
+      `https://api-mythriftmall.herokuapp.com/api/products/all`,
+      config
+    );
 
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: data });
   } catch (error) {
@@ -65,7 +68,10 @@ export const deleteProduct = (id) => async (dispatch, getState) => {
       },
     };
 
-    await axios.delete(`/api/products/${id}`, config);
+    await axios.delete(
+      `https://api-mythriftmall.herokuapp.com/api/products/${id}`,
+      config
+    );
 
     dispatch({ type: PRODUCT_DELETE_SUCCESS });
   } catch (error) {
@@ -101,7 +107,7 @@ export const createProduct =
       };
 
       const { data } = await axios.post(
-        `/api/products/`,
+        `https://api-mythriftmall.herokuapp.com/api/products/`,
         { name, price, description, image, countInStock },
         config
       );
@@ -126,7 +132,9 @@ export const createProduct =
 export const editProduct = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_EDIT_REQUEST });
-    const { data } = await axios.get(`/api/products/${id}`);
+    const { data } = await axios.get(
+      `https://api-mythriftmall.herokuapp.com/api/products/${id}`
+    );
     dispatch({ type: PRODUCT_EDIT_SUCCESS, payload: data });
   } catch (error) {
     const message =
@@ -160,7 +168,7 @@ export const updateProduct = (product) => async (dispatch, getState) => {
     };
 
     const { data } = await axios.put(
-      `/api/products/${product._id}`,
+      `https://api-mythriftmall.herokuapp.com/api/products/${product._id}`,
       product,
       config
     );

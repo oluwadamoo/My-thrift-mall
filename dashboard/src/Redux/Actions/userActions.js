@@ -29,7 +29,7 @@ export const login = (email, password) => async (dispatch) => {
     };
 
     const { data } = await axios.post(
-      `/api/users/login`,
+      `https://api-mythriftmall.herokuapp.com/api/users/login`,
       { email, password },
       config
     );
@@ -81,7 +81,10 @@ export const listUser = () => async (dispatch, getState) => {
       },
     };
 
-    const { data } = await axios.get(`/api/users`, config);
+    const { data } = await axios.get(
+      `https://api-mythriftmall.herokuapp.com/api/users`,
+      config
+    );
 
     dispatch({ type: USER_LIST_SUCCESS, payload: data });
   } catch (error) {
