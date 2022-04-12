@@ -1,7 +1,7 @@
 {
-  "name": "shoeshop",
+  "name": "mtm",
   "version": "0.1.0",
-  "proxy":"http://localhost:5000",
+  "proxy":"https://api-mythriftmall.herokuapp.com",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.15.0",
